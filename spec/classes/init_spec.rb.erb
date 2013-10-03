@@ -1,0 +1,9 @@
+require 'spec_helper'
+describe '<%= metadata.name %>' do
+
+  context 'with default options' do
+    it {
+      should include_class('<%= metadata.name %>')
+    }
+  end
+end
