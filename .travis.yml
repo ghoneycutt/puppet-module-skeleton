@@ -1,7 +1,11 @@
 ---
+# Broken bundler on travis CI - https://github.com/bundler/bundler/issues/2784
+before_install:
+  - gem update --system 2.1.11
+  - gem --version
 env:
-- PUPPET_VERSION=2.7.22
-- PUPPET_VERSION=3.2.4
+- PUPPET_VERSION=2.7.23
+- PUPPET_VERSION=3.3.2
 notifications:
 email: false
 rvm:
@@ -9,7 +13,7 @@ rvm:
 - 1.8.7
 matrix:
   allow_failures:
-  - env: PUPPET_VERSION=2.7.22
+  - env: PUPPET_VERSION=2.7.23
 language: ruby
 before_script: "gem install --no-ri --no-rdoc bundler"
 script: 'bundle exec rake validate && bundle exec rake lint && SPEC_OPTS="--format documentation" bundle exec rake spec'
