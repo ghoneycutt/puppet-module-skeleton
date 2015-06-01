@@ -7,5 +7,5 @@ else
 end
 
 gem 'puppetlabs_spec_helper', '>= 0.1.0'
-gem 'puppet-lint', '>= 1.0.0'
+gem 'puppet-lint', '>= 1.1.0'
 gem 'facter', '>= 1.7.0'
